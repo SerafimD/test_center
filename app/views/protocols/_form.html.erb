@@ -1,0 +1,77 @@
+<%= form_for(protocol) do |f| %>
+  <% if protocol.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(protocol.errors.count, "error") %> prohibited this protocol from being saved:</h2>
+
+      <ul>
+      <% protocol.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :main_number %>
+    <%= f.text_field :main_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :second_number %>
+    <%= f.text_field :second_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :customer_id %>
+    <%= f.number_field :customer_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sample %>
+    <%= f.text_field :sample %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_receipt %>
+    <%= f.datetime_select :date_receipt %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_transfer_lab %>
+    <%= f.datetime_select :date_transfer_lab %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_result %>
+    <%= f.datetime_select :date_result %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_pay %>
+    <%= f.datetime_select :date_pay %>
+  </div>
+
+  <div class="field">
+    <%= f.label :urgent %>
+    <%= f.check_box :urgent %>
+  </div>
+
+  <div class="field">
+    <%= f.label :paid %>
+    <%= f.check_box :paid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :send_to_customer %>
+    <%= f.check_box :send_to_customer %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comment %>
+    <%= f.text_field :comment %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
