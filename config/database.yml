@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: test_center_production
-  username: test_center
-  password: <%= ENV['TEST_CENTER_DATABASE_PASSWORD'] %>
+  username: serafimd
+  password: 'ZBM102teq'
