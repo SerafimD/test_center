@@ -70,6 +70,6 @@ class ProtocolsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def protocol_params
-      params.require(:protocol).permit(:main_number, :second_number, :customer_id, :sample, :date_receipt, :date_transfer_lab, :date_result, :date_pay, :urgent, :paid, :send_to_customer, :comment)
+      params.require(:protocol).permit(:main_number, :second_number, :customer_id, :sample, :date_receipt, :date_transfer_lab, :date_result, :date_pay, :urgent, :paid, :send_to_customer, :comment, :document, :remove_document)
     end
 end

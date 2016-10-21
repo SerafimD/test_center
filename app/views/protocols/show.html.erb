@@ -60,5 +60,10 @@
   <%= @protocol.comment %>
 </p>
 
+<p>
+  <strong>Document:</strong>
+  <%= link_to "#{@protocol[:document]}", @protocol.document.url unless @protocol.document.file.nil? %>
+</p>
+
 <%= link_to 'Edit', edit_protocol_path(@protocol) %> |
 <%= link_to 'Back', protocols_path %>

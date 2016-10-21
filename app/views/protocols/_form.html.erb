@@ -72,6 +72,19 @@
     <%= f.text_field :comment %>
   </div>
 
+  <div class="field">
+    <%= f.label :document, "Upload local file:" %><br />
+    <%= f.file_field :document %>
+    <%= f.hidden_field :document_cache %>
+  </div>
+
+  <div class="field">
+    <% unless @protocol.new_record? %>
+        <%= f.check_box :remove_document %>
+        <%= f.label :remove_document, "remove document" %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

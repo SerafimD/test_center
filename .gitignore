@@ -6,9 +6,4 @@ tmp/
 !/tmp/.keep
 .idea
 /config/database.yml
-
-
-
-
-
-
+/public/uploads/
