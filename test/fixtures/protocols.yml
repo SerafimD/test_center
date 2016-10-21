@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  main_number: MyString
+  second_number: MyString
+  customer_id: 1
+  sample: MyString
+  date_receipt: 2016-10-20 16:35:35
+  date_transfer_lab: 2016-10-20 16:35:35
+  date_result: 2016-10-20 16:35:35
+  date_pay: 2016-10-20 16:35:35
+  urgent: false
+  paid: false
+  send_to_customer: false
+  comment: MyString
+
+two:
+  main_number: MyString
+  second_number: MyString
+  customer_id: 1
+  sample: MyString
+  date_receipt: 2016-10-20 16:35:35
+  date_transfer_lab: 2016-10-20 16:35:35
+  date_result: 2016-10-20 16:35:35
+  date_pay: 2016-10-20 16:35:35
+  urgent: false
+  paid: false
+  send_to_customer: false
+  comment: MyString
