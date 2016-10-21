@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Main number:</strong>
+  <%= @protocol.main_number %>
+</p>
+
+<p>
+  <strong>Second number:</strong>
+  <%= @protocol.second_number %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @protocol.customer.name %>
+</p>
+
+<p>
+  <strong>Sample:</strong>
+  <%= @protocol.sample %>
+</p>
+
+<p>
+  <strong>Date receipt:</strong>
+  <%= @protocol.date_receipt %>
+</p>
+
+<p>
+  <strong>Date transfer lab:</strong>
+  <%= @protocol.date_transfer_lab %>
+</p>
+
+<p>
+  <strong>Date result:</strong>
+  <%= @protocol.date_result %>
+</p>
+
+<p>
+  <strong>Date pay:</strong>
+  <%= @protocol.date_pay %>
+</p>
+
+<p>
+  <strong>Urgent:</strong>
+  <%= @protocol.urgent %>
+</p>
+
+<p>
+  <strong>Paid:</strong>
+  <%= @protocol.paid %>
+</p>
+
+<p>
+  <strong>Send to customer:</strong>
+  <%= @protocol.send_to_customer %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @protocol.comment %>
+</p>
+
+<p>
+  <strong>Document:</strong>
+  <%= link_to "#{@protocol[:document]}", @protocol.document.url unless @protocol.document.file.nil? %>
+</p>
+
+<%= link_to 'Edit', edit_protocol_path(@protocol) %> |
+<%= link_to 'Back', protocols_path %>
