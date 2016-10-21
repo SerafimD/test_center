@@ -17,6 +17,7 @@
       <th>Paid</th>
       <th>Send to customer</th>
       <th>Comment</th>
+      <th>Document</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -36,6 +37,7 @@
         <td><%= protocol.paid %></td>
         <td><%= protocol.send_to_customer %></td>
         <td><%= protocol.comment %></td>
+        <td><%= link_to 'download', protocol.document.url unless protocol.document.file.nil? %></td>
         <td><%= link_to 'Show', protocol %></td>
         <td><%= link_to 'Edit', edit_protocol_path(protocol) %></td>
         <td><%= link_to 'Destroy', protocol, method: :delete, data: { confirm: 'Are you sure?' } %></td>
