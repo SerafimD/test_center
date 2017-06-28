@@ -36,6 +36,9 @@ gem 'jbuilder', '~> 2.5'
 # This gem provides a simple and extremely flexible way to upload files from Ruby applications.
 gem 'carrierwave'
 
+# use Foundation in Rails project.
+gem 'foundation-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
