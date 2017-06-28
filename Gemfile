@@ -18,6 +18,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
+# twitter bootstrap from frontend
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+
 # ExecJS lets you run JavaScript code from Ruby.
 # It automatically picks the best runtime available to evaluate your JavaScript program,
 # then returns the result to you as a Ruby object.

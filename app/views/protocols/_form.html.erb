@@ -1,91 +1,118 @@
-<%= form_for(protocol) do |f| %>
-  <% if protocol.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(protocol.errors.count, "error") %> prohibited this protocol from being saved:</h2>
+<%= form_for @protocol, :html => { :class => "form-horizontal protocol" } do |f| %>
 
-      <ul>
-      <% protocol.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @protocol.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@protocol.errors.count, "error") %> prohibited this protocol from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @protocol.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :main_number %>
-    <%= f.text_field :main_number %>
+  <div class="form-group">
+    <%= f.label :main_number, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :main_number, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:main_number) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :second_number, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :second_number, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:second_number) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :customer_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :customer_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:customer_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :sample, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :sample, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:sample) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :date_receipt, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :date_receipt, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:date_receipt) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :date_transfer_lab, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :date_transfer_lab, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:date_transfer_lab) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :date_result, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :date_result, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:date_result) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :date_pay, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :date_pay, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:date_pay) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :urgent, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :urgent, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:urgent) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :paid, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :paid, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:paid) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :send_to_customer, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :send_to_customer, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:send_to_customer) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :comment, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :comment, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:comment) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :document, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :document, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:document) %>
   </div>
 
-  <div class="field">
-    <%= f.label :second_number %>
-    <%= f.text_field :second_number %>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                protocols_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :customer_id, 'Заказчик' %>
-    <%= f.select :customer_id, Customer.all.collect { |p| [ p.name, p.id ] }, include_blank: false %>
-
-  </div>
-
-  <div class="field">
-    <%= f.label :sample %>
-    <%= f.text_field :sample %>
-  </div>
-
-  <div class="field">
-    <%= f.label :date_receipt %>
-    <%= f.datetime_select :date_receipt %>
-  </div>
-
-  <div class="field">
-    <%= f.label :date_transfer_lab %>
-    <%= f.datetime_select :date_transfer_lab %>
-  </div>
-
-  <div class="field">
-    <%= f.label :date_result %>
-    <%= f.datetime_select :date_result %>
-  </div>
-
-  <div class="field">
-    <%= f.label :date_pay %>
-    <%= f.datetime_select :date_pay %>
-  </div>
-
-  <div class="field">
-    <%= f.label :urgent %>
-    <%= f.check_box :urgent %>
-  </div>
-
-  <div class="field">
-    <%= f.label :paid %>
-    <%= f.check_box :paid %>
-  </div>
-
-  <div class="field">
-    <%= f.label :send_to_customer %>
-    <%= f.check_box :send_to_customer %>
-  </div>
-
-  <div class="field">
-    <%= f.label :comment %>
-    <%= f.text_field :comment %>
-  </div>
-
-  <div class="field">
-    <%= f.label :document, "Upload local file:" %><br />
-    <%= f.file_field :document %>
-    <%= f.hidden_field :document_cache %>
-  </div>
-
-  <div class="field">
-    <% unless @protocol.new_record? %>
-        <%= f.check_box :remove_document %>
-        <%= f.label :remove_document, "remove document" %>
-    <% end %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
