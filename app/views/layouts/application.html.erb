@@ -13,10 +13,13 @@
     &mdash;
     <%= link_to 'Заказчики', customers_url %>
 
+    <%= render 'layouts/header' %>
+
   </head>
 
   <body>
-
+  <%= render 'layouts/page_navbar' %>
+  <%= render 'layouts/wrapper' %>
   <div id="user_nav">
     <% if current_user %>
         Logged in as <%= current_user.email %>.
@@ -33,6 +36,8 @@
   <% end %>
 
   <%= yield %>
-
+  <%= render 'layouts/footer' %>
+  <%= render 'layouts/back_to_top' %>
+  <%= render 'layouts/js' %>
   </body>
 </html>
