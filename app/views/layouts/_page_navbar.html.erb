@@ -24,11 +24,6 @@
     <!-- top right nav -->
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
-        <a href="#" data-toggle="dropdown">
-          <i class="fa fa-bell-o"></i>
-          <span class="sr-only">Notifications</span>
-          <span class="badge badge-danger">6</span>
-        </a>
         <ul class="dropdown-menu right dropdown-notification" role="menu">
           <li><a href="#" class="dropdown-menu-header">Notifications</a>
           </li>
@@ -84,10 +79,8 @@
         </ul>
       </li>
       <li>
-        <a href="login.html">
-          <i class="fa fa-power-off"></i>
-          <span class="sr-only">Logout</span>
-        </a>
+        <%= link_to raw("<i class=\"fa fa-power-off\"></i>
+          <span class=\"sr-only\">Login</span>"), log_out_path %>
       </li>
       <li>
         <a id="toggle-right-sidebar" href="#" class="tipB" title="Toggle right sidebar">

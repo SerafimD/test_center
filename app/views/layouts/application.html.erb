@@ -7,37 +7,28 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <%= link_to 'Главная', root_path %>
-    &mdash;
-    <%= link_to 'Протоколы', protocols_url %>
-    &mdash;
-    <%= link_to 'Заказчики', customers_url %>
-
     <%= render 'layouts/header' %>
 
   </head>
 
   <body>
-  <%= render 'layouts/page_navbar' %>
-  <%= render 'layouts/wrapper' %>
-  <div id="user_nav">
-    <% if current_user %>
-        Logged in as <%= current_user.email %>.
-        <%= link_to "Log out", log_out_path %>
 
-    <% else %>
-        <%= link_to "Sign up", sign_up_path %> or
-        <%= link_to "log in", log_in_path %>
-    <% end %>
-  </div>
+  <% if current_user %>
+      <%= render 'layouts/page_navbar' %>
+      <%= render 'layouts/wrapper' %>
+      <%= render 'layouts/footer' %>
+      <%= render 'layouts/back_to_top' %>
+      <%= render 'layouts/js' %>
+  <% else %>
+
+  <% end %>
+
 
   <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, :id => "flash_#{name}" %>
   <% end %>
 
   <%= yield %>
-  <%= render 'layouts/footer' %>
-  <%= render 'layouts/back_to_top' %>
-  <%= render 'layouts/js' %>
+
   </body>
 </html>
