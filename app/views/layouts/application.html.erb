@@ -19,10 +19,7 @@
       <%= render 'layouts/footer' %>
       <%= render 'layouts/back_to_top' %>
       <%= render 'layouts/js' %>
-  <% else %>
-
   <% end %>
-
 
   <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, :id => "flash_#{name}" %>
