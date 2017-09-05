@@ -3,21 +3,19 @@
   <head>
     <title>TestCenter</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/js' %>
   </head>
 
   <body>
   <% if current_user %>
-      <%= render 'layouts/header' %>
-      <%= render 'layouts/page_navbar' %>
-
-      <%= render 'layouts/footer' %>
-      <%= render 'layouts/back_to_top' %>
-      <%= render 'layouts/js' %>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/page_navbar' %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+    <%= render 'layouts/back_to_top' %>
+  <% else %>
+    <%= yield %>
   <% end %>
-
-  <%= yield %>
 
   </body>
 </html>
